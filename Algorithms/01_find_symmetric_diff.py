@@ -9,3 +9,19 @@ Create a function that takes two or more arrays and returns an array of their sy
 
 https://www.freecodecamp.org/learn/coding-interview-prep/algorithms/find-the-symmetric-difference
 """
+
+# Using Python's sets
+def sym_sets(*args):
+    list_sets = [set(x) for x in args]
+    result = set()
+    for s in list_sets:
+        result = result.union(s) - result.intersection(s)
+    return list(result)
+
+
+def sym(*args):
+    pass
+
+
+# returns [1, 4, 5]
+print(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]))
